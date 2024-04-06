@@ -1,0 +1,105 @@
+body{
+    background-color: #fff;
+}
+
+h1 {
+    color: rgba(8,141,165,1);
+    margin-left: 100px;
+    text-shadow: 1px .5px 4px rgba(0,0,0,0.6); 
+}
+.container{
+    width: 450px;
+    height: 450px;
+    background-color: #faebd7;
+    border:2px solid black;
+    border-radius: 5%; /*can also 5% 5% 5% 5%, four round corner*/
+}
+
+/*-----SELECT ALL SQUARES IN THE ARRAY ----*/
+
+.container .squares:nth-child(-n+4){   /*all the squares class, also can be written in （4）*/
+    background-image: url("../Image/Icons/icons.png");/*one dot one up derectory*/
+    color: #fff;
+    float: left; /*display from left in a line, or will in a column*/
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    border: 1px solid black;
+    border-radius: 25%;
+    cursor: pointer;/* a little finger*/
+    transition: transform .5s ease-in-out;
+    /*transition property ; transition duration ; transition delay ; 
+    transition-timing-function(animation style)
+    ; above is the shortcut.--transition ;*/
+}
+
+/*----SELECT ALL SQUARES PARAGRAPHS IN THE ARRAY----*/
+
+.squares:nth-child(-n+4) p{
+font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+font-size: 1.5em;
+font-weight: 900; /* bolind*/
+text-align: center;
+margin: 0; /*top, right,bottom, left*/
+text-shadow: 2px 1px 4px rgba(0,0,0,0.8);
+
+}
+
+/*----INDIVIDUALLY SELECT A SQUARE IN THE ARRAY ----*/
+.squares:nth-child(1){
+    background-color: #4240FF;
+}
+
+.squares:nth-child(2) {
+    background-color: #ab3fdd;
+}
+
+.squares:nth-child(3) {
+    background-color: #ae163e;
+}
+
+.squares:nth-child(4) {
+    background-color: #00b200;
+}
+
+/*-----HOVER, TRANSLATE & TRANSFORM EFFECTS -----*/
+
+.container .squares:nth-child(-n+4):hover{
+background-image: url("../Image/Icons/icons2.png");
+transform: scale(.5); /*size change*/
+animation-name: race; /*name animation and define animation later in @keyframes race*/
+animation-duration: 2.5s;
+animation-iteration-count: infinite; /*loop*/
+animation-timing-function: cubic-bezier(2.5,.2,.3,2);
+} /*all the 4 boxes effect*/
+
+.squares:nth-child(1):hover {
+    background-color: #13b4ff;
+}
+
+.squares:nth-child(2):hover {
+    background-color: #d861af;
+}
+
+.squares:nth-child(3):hover {
+    background-color: #81205f;
+}
+
+.squares:nth-child(4):hover {
+    background-color: #77b800;
+}
+
+/*-------ANIMATION EFFECTS-----*/
+
+@keyframes race {
+    0%, 100% {/*at the begin and the end, it willbe like this*/
+        transform: translateY(0px);/*translate--move up and down*/
+        background-image: url("../Image/Icons/icons2.png")
+    }  
+    50% { /*at 50%, it will change to this,can alos code as 100% 80%...*/
+        transform: translateY(330px);/*going down 300px*/
+    }
+
+}
+  
+
